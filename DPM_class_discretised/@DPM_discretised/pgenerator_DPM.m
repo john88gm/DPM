@@ -29,15 +29,13 @@ safe_command = 0;
 t_temp = time0;
 
 %%
+r = rand; % uniform random number
 
-
-r = rand;
-
-% % for Aspirin
+% Initial guess for the new nucleation time
 told = time+1000.*(time==0);
 options = optimoptions('fsolve','Display','off','TolFun',1e-15);
 [t_temporary,fval,exitflag] = fsolve(@(x) log(1-r) + L(x),told,options);
-%   t_temp      disp('Evaluating trial...')
+% Check if the new time is indeed the one seek
 if(exitflag>0)
     t_temp = t_temporary;
 else

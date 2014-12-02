@@ -33,6 +33,7 @@ r = rand; % uniform random number
 
 % Initial guess for the new nucleation time
 told = time+1000.*(time==0);
+% Find the next nucleation time
 options = optimoptions('fsolve','Display','off','TolFun',1e-15);
 [t_temporary,fval,exitflag] = fsolve(@(x) log(1-r) + L(x),told,options);
 % Check if the new time is indeed the one seek
@@ -42,7 +43,7 @@ else
     t_temp = time0;
 end
 
-% mini safe command
+% Define the function outputs
 if(time>=Time && number == 0)
     disp(['Nothing happened'])
     n = number;

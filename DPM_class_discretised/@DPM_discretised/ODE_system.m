@@ -138,7 +138,6 @@ while(c(end)>= O.solubility(O.Tprofile(1e8)))
                 
         IntegrationODE = 0; % Do not integrate any ODE
         
-
     end % if end
 
     %%
@@ -205,10 +204,6 @@ while(c(end)>= O.solubility(O.Tprofile(1e8)))
     end
     
 end % while end
-
-% if(N<nmax)
-%     disp('The population required could not be achieved in the selected time span')
-% end % if end
 
 %% Include the nucleation times and the other extra time in the solution times vector
 try

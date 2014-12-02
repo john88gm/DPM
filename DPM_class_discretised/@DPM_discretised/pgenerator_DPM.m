@@ -11,9 +11,6 @@ T0 = O.Tprofile(0);
 % Supersaturation with n-dependent and t-dependent concentration
 S = @(T,t) instant_conc(time0,Lin,t,O,N_of_bins,number0)./saturation(T);
 
-% n_lim = number0+1;
-% i = 2;
-% k = 0;
 Time = O.sol_time(end);
 %%
 n = 0;
@@ -25,10 +22,9 @@ L = @(t) integral(@(x) l(x,V),time0,t);
 time = time0;
 number = number0;
 safe_command = 0;
-
 t_temp = time0;
 
-%%
+%
 r = rand; % uniform random number
 
 % Initial guess for the new nucleation time
